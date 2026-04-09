@@ -2,6 +2,24 @@
 
 A Retrieval-Augmented Generation (RAG) application that enables intelligent Q&A on PDF documents using semantic search and large language models.
 
+🚀 **Live Demo:** https://your-app-url.streamlit.app
+
+An end-to-end Retrieval-Augmented Generation (RAG) system that enables users to upload PDF documents and interact with them through an explainable AI interface.
+
+Unlike basic chatbots, this system:
+- Grounds responses strictly in document context (no hallucination)
+- Provides source attribution with relevance scores
+- Displays confidence levels based on retrieval quality
+
+## 🔑 Key Highlights
+
+- Built a modular RAG pipeline (Loader → Chunker → Embedder → Retriever → LLM)
+- Implemented semantic search using ChromaDB with similarity scoring
+- Designed hallucination-controlled prompting for reliable answers
+- Developed explainable UI with source transparency and confidence metrics
+- Deployed on Streamlit Cloud with dependency optimization and compatibility fixes
+
+
 ## Features
 
 ✨ **Core Capabilities**
@@ -32,6 +50,18 @@ User Query → Retrieve Relevant Chunks → Generate LLM Response
     ↓
 Display Answer + Sources + Confidence Score
 ```
+
+
+## ⚙️ Challenges & Solutions
+
+- **Dependency Conflicts (ChromaDB + Protobuf)**  
+  Resolved deployment failure by pinning compatible protobuf version
+
+- **Hallucination Control**  
+  Implemented strict prompt constraints to ensure answers are grounded in retrieved context
+
+- **Efficient Embedding Loading**  
+  Used caching to avoid repeated model loading in Streamlit sessions
 
 ## Installation
 
