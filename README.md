@@ -2,7 +2,7 @@
 
 A Retrieval-Augmented Generation (RAG) application that enables intelligent Q&A on PDF documents using semantic search and large language models.
 
-🚀 **Live Demo:** https://your-app-url.streamlit.app
+🚀 **Live Demo:** https://rag-pipeline-ev7tqjpeoy7qvwou3w2lpp.streamlit.app/
 
 An end-to-end Retrieval-Augmented Generation (RAG) system that enables users to upload PDF documents and interact with them through an explainable AI interface.
 
