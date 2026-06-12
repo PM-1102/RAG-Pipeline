@@ -1,0 +1,17 @@
+# .dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.env
+.git
+.github
+data/qdrant_storage/
+data/flashrank_cache/
+sandbox_*.txt

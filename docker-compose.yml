@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  scamshield-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scamshield_production_container
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      # Mount persistent local storage coordinates to prevent redundant ONNX model downloads
+      - ./data/qdrant_storage:/workspace/data/qdrant_storage
+      - ./data/flashrank_cache:/workspace/data/flashrank_cache
+    restart: unless-stopped
