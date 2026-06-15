@@ -37,9 +37,21 @@ st.subheader("Fintech & Telecom Multi-Tenant Scam Risk Intelligence Engine")
 st.caption("Production Readiness Verification Instance — Equipped with Multi-Stage System Telemetry Auditing")
 st.divider()
 
+# ==========================================
+# SYSTEM WORKSPACE INITIALIZATION HANDLES (FIXED VIA RESOURCE CACHING)
+# ==========================================
+@st.cache_resource
+def get_cached_rag_pipeline():
+    """
+    Singleton factory pattern ensuring only one persistent connection pool
+    to the Qdrant storage layers is shared across runtime execution threads.
+    """
+    return RAGPipeline()
+
 if "pipeline" not in st.session_state:
     try:
-        st.session_state.pipeline = RAGPipeline()
+        # Utilize the cached singleton to completely eliminate directory file-locking crashes
+        st.session_state.pipeline = get_cached_rag_pipeline()
     except Exception as e:
         st.error(f"Failed to synchronize system engine topologies: {str(e)}")
 
